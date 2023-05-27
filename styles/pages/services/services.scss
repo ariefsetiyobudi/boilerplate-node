@@ -1,0 +1,8 @@
+.services {
+  @extend %page;
+}
+.services__wrapper {
+  @include media('<phone') {
+    padding: 10rem 0 0;
+  }
+}

@@ -1,0 +1,65 @@
+%description-12 {
+  font-size: 1.2rem;
+
+  @include media('<phone') {
+    font-size: 3rem;
+  }
+}
+
+%description-14 {
+  font-size: 1.4rem;
+
+  @include media('<phone') {
+    font-size: 3rem;
+  }
+}
+
+%description-16 {
+  font-size: 1.6rem;
+  font-weight: 200;
+  line-height: 1.3;
+
+  @include media('<phone') {
+    font-size: 3rem;
+  }
+}
+
+%description-20 {
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: 1.3;
+
+  @include media('<phone') {
+    font-size: 3rem;
+  }
+}
+
+%description-22 {
+  font-size: 2.2rem;
+  font-weight: 200;
+  line-height: 1.3;
+
+  @include media('<phone') {
+    font-size: 3rem;
+  }
+}
+
+%description-24 {
+  font-size: 2.4rem;
+  font-weight: 200;
+  line-height: 1.3;
+
+  @include media('<phone') {
+    font-size: 3rem;
+  }
+}
+
+%description-26 {
+  font-size: 2.6rem;
+  font-weight: 200;
+  line-height: 1.3;
+
+  @include media('<phone') {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,36 @@
+footer.footer
+  a.scrolltop__button(href="#content") Scroll Top
+  .footer__wrapper
+    .footer__content
+      figure.footer__content__media
+        img.footer__content__media__image(alt=footer.data.logo.alt src=footer.data.logo.url)
+    each section in footer.data.body
+      if section.slice_type == 'list'
+        each data in section.items
+          .footer__content
+            .footer__content__title=data.label
+            .footer__content__description
+              span!=data.text_1.replace(/\n/g, '</span><span>')
+              span.mt-20!=data.text_2.replace(/\n/g, '</span><span>')
+      if section.slice_type == 'link'
+        .footer__content
+          .footer__content__title Shortcuts
+          .footer__content__description
+            ul.footer__navigation__list
+              each item in section.items
+                li.footer__navigation__list__item
+                  if item.link.slug !== 'home'
+                    a.footer__navigation__list__link(href=`${item.link.slug}`)=item.text
+                  else 
+                    a.footer__navigation__list__link(href="/")=item.text
+      if section.slice_type == 'download'
+        .footer__content
+          .footer__content__title=section.slice_type
+          figure.footer__content__media
+            img.footer__content__media__image(alt=section.primary.download.alt src=section.primary.download.url)
+  .footer__cc 
+    .footer__copyright!=footer.data.copyright 
+    .footer__credit
+      each credit in footer.data.credit
+        p.footer__credit__text Credit :
+        a.footer__credit__link(href=`${credit.link.url}` target=`${credit.link.target}`)=credit.text

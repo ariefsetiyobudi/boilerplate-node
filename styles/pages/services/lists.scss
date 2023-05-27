@@ -1,0 +1,28 @@
+.services__lists{
+  padding: 5rem;
+  @include media('<phone'){
+    padding-bottom: 15rem;
+  }
+}
+
+.services__lists__label{
+  @extend %title-30;
+  color: $color-american-orange;
+  text-transform: uppercase;
+  white-space: nowrap;
+  min-width: 40rem;
+  margin-bottom: 5rem;
+}
+
+.services__lists__box{
+  border-bottom: 1px solid #000;
+  padding: 1rem 0;
+
+  &:first-of-type{
+    border-top: 1px solid #000;
+  }
+}
+.services__lists__title{
+  @extend %title-h2-m;
+  text-transform: uppercase;
+}

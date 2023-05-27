@@ -1,0 +1,46 @@
+extends ../partial/layout
+
+block variables
+  - var template = 'home'
+
+block content
+  .home(data-background="#f4f4f4" data-color="#000000")
+    .home__wrapper
+      each section in home.data.body
+        if section.slice_type == 'content'
+          section.home__content(class=`${section.primary.type === 'Left' ? 'home__content--left' : section.primary.type === 'Right' ? 'home__content--right' : 'home__content--background'}`)
+            .home__content__wrapper
+              if section.primary.text =='Scroll Down'
+                .embed__responsive__item
+                  video.embed__responsive__video(autoplay muted loop)
+                    source(src="/video" type="video/mp4")
+              h2.home__content__title(data-animation="title")
+                span!=section.primary.title.replace(/\n/g, '</span><span>')
+              .home__content__box
+                if section.primary.label
+                  p.home__content__label(data-animation="label")=section.primary.label
+                .home__content__inner__box
+                  if section.primary.description
+                  .home__content__description(data-animation="paragraph")
+                    span!=section.primary.description.replace(/\n/g, '</span><span>')
+                  if section.primary.text
+                    if section.primary.link.slug
+                      a.home__content__button(href=section.primary.link.slug)=section.primary.text
+                    else
+                      a.home__content__button(href="javascript:void(0)")=section.primary.text
+            figure.home__content__media
+              img.home__content__media__image(alt=section.primary.image.alt src=section.primary.image.url)
+        if section.slice_type == 'gallery'
+          section.home__gallery
+            h2.home__gallery__title(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')
+            .home__gallery__wrapper
+              each media in section.items
+                figure.home__gallery__media
+                  img.home__gallery__media__image(alt=media.image.alt src=media.image.url)
+        if section.slice_type == 'result'
+          section.home__result
+            each text in section.items
+              .home__result__box
+                h2.home__result__title(data-animation="title")!=text.title
+                p.home__result__label(data-animation="label")!=text.label
+      include ../partial/footer

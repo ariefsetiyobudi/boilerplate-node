@@ -1,0 +1,140 @@
+.company__content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15rem 5rem 5rem;
+  gap : 5rem;
+  @include media('<phone') {
+    padding: 5rem;
+    &:first-of-type{
+      padding: 10rem 5rem 5rem;
+    }
+  }
+}
+
+.company__content__wrapper{
+  width: calc(100vw - 10rem);
+}
+
+.company__content--background{
+  display: flex;
+  flex-direction: column;
+
+  .company__content__box{
+    flex-direction: row;
+    gap: 5rem;
+
+    @include media('<phone') {
+      flex-direction: column;
+    }
+  }
+  .company__content__description{
+    width: calc((100% - 15rem) / 4);
+
+    @include media('<phone') {
+      width:100%;
+    }
+  }
+
+  .company__content__media{
+    display: none;
+  }
+}
+
+.company__content--left{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5rem 15rem;
+  gap: 15rem;
+
+  .company__content__box{
+    flex-direction: column;
+  }
+
+  @include media('<phone') {
+    padding: 5rem;
+    gap: 5rem;
+
+    .company__content__media{
+      display: none;
+    }
+  }
+
+}
+
+.company__content__label{
+  @extend %title-30;
+  color: $color-american-orange;
+  text-transform: uppercase;
+  white-space: nowrap;
+  min-width: 40rem;
+  margin-bottom: 5rem;
+}
+
+.company__content__title{
+  @extend %title-h2;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+
+  span{
+    @include media('<phone') {
+      max-width:90%;
+    }
+  }
+  @include media('<phone') {
+    padding-bottom: 5rem;
+    border-bottom: 1px solid $color-black;
+    max-width:100%;
+  }
+}
+
+.company__content__box{
+  display: flex;
+  flex-direction: row;
+  padding: 5rem 0;
+  gap: 5rem;
+
+  @include media('<phone') {
+    padding: 5rem 0 0;
+    flex-direction: column;
+    max-width: calc(100vw - 10rem);
+  }
+}
+
+.company__content__inner__box{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.company__content__description{
+  line-height: 1.5;
+}
+
+
+.company__content__button{
+  border: 1px solid $color-black;
+  padding: 0.5rem 2rem;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  font-size: small;
+
+  &:after{
+    content:"→";
+    margin-left: 1rem;
+  }
+}
+
+.company__content__media{
+  width: 77.5rem;
+}
+
+.company__content__media__image{
+  width:100%
+}

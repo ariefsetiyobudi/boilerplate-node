@@ -1,0 +1,25 @@
+.home {
+  @extend %page;
+}
+.home__wrapper {
+  @include media('<phone') {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.embed__responsive__item{
+  @extend %cover;
+  z-index: 1;
+}
+.embed__responsive__video{
+  width: 100%;
+
+  @include media('<phone') {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

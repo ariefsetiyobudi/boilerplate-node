@@ -1,0 +1,19 @@
+.company__result{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid #000;
+  border-left-width: 0;
+  border-right-width: 0;
+  margin: 10rem 5rem;
+}
+.company__result__box{
+  padding: 3rem 5rem 5rem;
+  text-align: end;
+}
+.company__result__title{
+  font-size: 15rem;
+}
+.company__result__label{
+  padding-right: 2rem;
+}

@@ -1,0 +1,100 @@
+.contact {
+  @extend %page;
+
+  .footer{
+    display: none;
+  }
+}
+.contact__wrapper {
+  @include media('<phone') {
+    padding: 10rem 0 0;
+  }
+}
+
+.contact__content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10rem 5rem 5rem;
+}
+
+.contact__content__box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include media('<phone') {
+    flex-direction: column;
+  }
+}
+
+.contact__content__item{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  max-width: 30%;
+
+  @include media('<phone') {
+    max-width: 100%;
+  }
+}
+
+.contact__content__title{
+  @extend %title-h2;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__content__description{
+  line-height: 1.5;
+}
+
+.contact__content__office{
+  line-height: 1.5;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2.5rem;
+}
+
+.contact__content__contact{
+  line-height: 1.5;
+  margin-top: -2.5rem;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2.5rem;
+}
+
+.contact__content__media{
+  width: 15rem;
+
+  @include media('<phone') {
+    width: 25rem;
+  }
+}
+
+.contact__content__media__image{
+  width: 100%;
+}
+
+.contact__map{
+  width: 60vw;
+  height: 70vh;
+  position: absolute;
+  right: 5rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  iframe{
+    width: 100%;
+    height: 100%;
+    border: 1px solid $color-dark-silver;
+  }
+
+  @include media('<phone') {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: unset;
+    width: calc(100vw - 10rem);
+    height: calc((65 / 100) * (100vw - 10rem));
+  }
+}
+

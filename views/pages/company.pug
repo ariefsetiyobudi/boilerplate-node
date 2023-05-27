@@ -1,0 +1,36 @@
+extends ../partial/layout
+
+block variables
+  - var template = 'company'
+
+block content
+  .company(data-background="#f4f4f4" data-color="#000000")
+    .company__wrapper
+      each section in company.data.body
+        if section.slice_type == 'content'
+          section.company__content(class=`${section.primary.type === 'Left' ? 'company__content--left' : section.primary.type === 'Right' ? 'company__content--right' : 'company__content--background'}`)
+            .company__content__wrapper
+              if section.primary.label
+                  p.company__content__label(data-animation="label")!=section.primary.label.replace(/\n/g, '<br>')
+              h2.company__content__title(data-animation="title")
+                span!=section.primary.title.replace(/\n/g, '</span><span>')
+              .company__content__box
+                each desc in section.items
+                  .company__content__description(data-animation="paragraph")
+                    span!=desc.description.replace(/\n/g, '</span><span>')
+            figure.company__content__media
+              img.company__content__media__image(alt=section.primary.image.alt src=section.primary.image.url)
+        if section.slice_type == 'gallery'
+          section.company__gallery
+            h2.company__gallery__title(data-animation="title")!=section.primary.title.replace(/\n/g, '<br>')
+            .company__gallery__wrapper
+              each media in section.items
+                figure.company__gallery__media
+                  img.company__gallery__media__image(alt=media.image.alt src=media.image.url)
+        if section.slice_type == 'result'
+          section.company__result
+            each text in section.items
+              .company__result__box
+                h2.company__result__title(data-animation="title")!=text.title
+                p.company__result__label(data-animation="label")!=text.label
+      include ../partial/footer

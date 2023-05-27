@@ -1,0 +1,25 @@
+extends ../partial/layout
+
+block variables
+  - var template = 'contact'
+
+block content
+  .contact(data-background="#f4f4f4" data-color="#000000")
+    .contact__wrapper
+      section.contact__content
+        .contact__content__box
+          .contact__content__item
+            .contact__content__title=contact.data.title
+            .contact__content__description!=contact.data.description.replace(/\n/g, '<br>')
+            .contact__map
+              iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.0155725299333!2d112.73537291517538!3d-7.239061973110422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f93f68a3f207%3A0xc2bd2f73a54dd2dd!2sGALA%20DIGDAYA!5e0!3m2!1sen!2sid!4v1680668137894!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+            .contact__content__office!=contact.data.text_1.replace(/\n/g, '<br>')
+            .contact__content__contact!=contact.data.text_2.replace(/\n/g, '<br>')
+            .contact__content__download Scan code below to get our Company Profile
+            .contact__content__code
+              figure.contact__content__media
+                each section in footer.data.body
+                  if section.slice_type == 'download'
+                    img.contact__content__media__image(alt=section.primary.download.alt src=section.primary.download.url)
+      include ../partial/footer
+

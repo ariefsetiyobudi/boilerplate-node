@@ -1,0 +1,60 @@
+@import './base/reset';
+
+// -------------------------------- U T I L S ---------------------------------------
+
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/mixins';
+@import './utils/vendors';
+@import './utils/responsive';
+
+// ------------------------------- S H A R E D --------------------------------------
+
+@import './shared/descriptions';
+@import './shared/titles';
+@import './shared/links';
+@import './shared/pages';
+@import './shared/vertical-titles';
+
+// --------------------------------- B A S E ----------------------------------------
+
+@import './base/fonts';
+@import './base/base';
+
+// --------------------------- C O M P O N E N T S ----------------------------------
+
+@import './components/preloader';
+
+// ------------------------------- L A Y O U T S ------------------------------------
+
+@import './layouts/navigation';
+@import './layouts/footer';
+
+// -------------------------- P A G E S  D I R E C T O R Y --------------------------
+
+// Home
+
+@import './pages/home/home';
+@import './pages/home/content';
+@import './pages/home/gallery';
+@import './pages/home/result';
+
+// Company
+
+@import './pages/company/company';
+@import './pages/company/content';
+@import './pages/company/gallery';
+@import './pages/company/result';
+
+// Services
+
+@import './pages/services/services';
+@import './pages/services/content';
+@import './pages/services/gallery';
+@import './pages/services/lists';
+@import './pages/services/quality';
+
+// Services
+
+@import './pages/contact/contact';
+

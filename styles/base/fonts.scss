@@ -1,0 +1,36 @@
+@font-face {
+  font-family: $font-tomato-grotesk;
+  src: url('../fonts/tomato-grotesk-extra-light.woff2') format('woff2'),
+      url('../fonts/tomato-grotesk-extra-light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-tomato-grotesk;
+  src: url('../fonts/tomato-grotesk-light.woff2') format('woff2'),
+      url('../fonts/tomato-grotesk-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-tomato-grotesk;
+  src: url('../fonts/roboto-regular.woff2') format('woff2'),
+      url('../fonts/roboto-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-tomato-grotesk;
+  src: url('../fonts/roboto-medium.woff2') format('woff2'),
+      url('../fonts/roboto-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+

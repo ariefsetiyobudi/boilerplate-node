@@ -1,0 +1,147 @@
+.footer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: $color-cool-black;
+  color: $color-white;
+  width: 100vw;
+  left: 0;
+  gap: 5rem;
+  padding: 5rem 5rem 2rem;
+  z-index: z('footer');
+  @include media("<phone") {
+		width: 100%;
+	}
+}
+
+.desktop .contact .scrolltop__button {
+  display: none;
+}
+
+.scrolltop__button{
+  color: $color-black;
+  border: 1px solid $color-black;
+  padding: 0.5rem 2rem;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  font-size: initial;
+  position: absolute;
+  right: 5rem;
+  margin-top: -12rem;
+
+  &:after{
+    content:"↑";
+    margin-left: 1rem;
+  }
+
+  @include media("<phone") {
+    font-size: small;
+	}
+}
+.footer__wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5rem;
+
+  @include media("<phone") {
+    flex-direction: row;
+
+    .footer__content:nth-child(1),
+    .footer__content:nth-child(4){
+      display: none;
+    }
+	}
+}
+
+.footer__content{
+  width: calc((62vw - 30rem) / 3);
+
+  &:first-of-type{
+      width: 30vw;
+
+      .footer__content__media{
+        padding: 2rem 5rem;
+      }
+  }
+  &:last-of-type{
+      width: 8vw;
+  }
+
+  @include media("<phone") {
+    width: calc((100vw - 10rem) / 3);
+    &:last-of-type{
+      width: 20vw;
+    }
+	}
+}
+
+.footer__content__media{
+  width: 100%;
+}
+
+.footer__content__media__image{
+  width: 100%;
+}
+
+.footer__content__title {
+  color: $color-american-orange;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+
+  @include media("<phone") {
+    font-size: 2.5rem;
+	}
+
+}
+
+.footer__content__description{
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+
+  .mt-20{
+    margin-top: 2rem;
+  }
+
+  @include media("<phone") {
+    font-size: 2rem;
+	}
+}
+
+.footer__navigation__list{
+
+}
+
+.footer__navigation__list__item{
+
+}
+
+.footer__navigation__list__link{
+  @extend %link--hidden;
+}
+
+.footer__cc{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include media("<phone") {
+    font-size: 2rem;
+	}
+}
+
+.footer__copyright{
+  text-transform: uppercase;
+}
+
+.footer__credit{
+  text-transform: uppercase;
+  display: flex;
+  gap: 0.5rem;
+
+  .footer__credit__link{
+    @extend %link--hidden;
+  }
+}
