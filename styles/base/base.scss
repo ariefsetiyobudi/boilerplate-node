@@ -1,0 +1,102 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  user-select: none;
+  outline: none;
+  -webkit-touch-callout: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  $vw: 100vw;
+  background: $color-black;
+  box-sizing: border-box;
+  color: $color-white;
+  font-size: calc($vw / 1920px * 10px);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  position: fixed;
+  -moz-osx-font-smoothing: grayscale;
+  top: 0;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+
+  // @include media('<phone') {
+  //     font-size: calc($vw / 375px * 10px);
+  // }
+}
+
+body {
+  font: 1.4rem/1.5 $font-neue-haas-grotesk-regular;
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  outline: none;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: none;
+  color: inherit;
+  font: inherit;
+  outline: none;
+  pointer-events: auto;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+input,
+textarea {
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  pointer-events: auto;
+}
+
+.content {
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+[data-animation="paragraph"] {
+  span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+}
