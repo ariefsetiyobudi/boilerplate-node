@@ -4,7 +4,6 @@ const webpack = require('webpack')
 
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
@@ -49,19 +48,6 @@ module.exports = {
       filename: '[name].css'
     }),
 
-    new ImageMinimizerPlugin({
-      minimizer: {
-        implementation: ImageMinimizerPlugin.imageminMinify,
-        options: {
-          plugins: [
-            ['gifsicle', { interlaced: true }],
-            ['jpegtran', { progressive: true }],
-            ['optipng', { optimizationLevel: 8 }]
-          ]
-        }
-      }
-    }),
-
     new CleanWebpackPlugin()
   ],
 
@@ -104,15 +90,6 @@ module.exports = {
         generator: {
           filename: '[hash].[ext]'
         }
-      },
-
-      {
-        test: /\.(jpe?g|png|gif|svg|webp)$/i,
-        use: [
-          {
-            loader: ImageMinimizerPlugin.loader
-          }
-        ]
       },
 
       {
